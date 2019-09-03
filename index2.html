@@ -1,0 +1,79 @@
+<!--
+    @author Caren Briones <carenpbriones@gmail.com>
+    Star Wars RPG Game
+
+    September 2, 2019
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Star Wars RPG Game</title>
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <div class="row" id="your-character">
+            <div class="col-3">
+                <div class="card character" id="obi-wan-kenobi">
+                    <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Obi-Wan Kenobi</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card character" id="luke-skywalker">
+                    <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Luke Skywalker</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card character" id="darth-sidious">
+                    <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title health-points">Darth Sidious</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card character" id="darth-maul">
+                    <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title health-points">Darth Maul</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <!-- <button type="button" class="character btn btn-primary" id="obi-wan-kenobi">Obi-Wan Kenobi</button>
+        <button type="button" class="character btn btn-primary" id="luke-skywalker">Luke Skywalker</button>
+        <button type="button" class="character btn btn-primary" id="darth-sidious">Darth Sidious</button>
+        <button type="button" class="character btn btn-primary" id="darth-maul">Darth Maul</button><br><br> -->
+    <div class="row" id="enemies to attack"></div> <br>
+    <div class="row" id="defender"></div><br>
+    <div class="row"><button type="button" class="character btn btn-primary" class="attack">Attack</button></div>
+
+    </div>
+</body>
+
+</html>

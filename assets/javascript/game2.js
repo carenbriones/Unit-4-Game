@@ -13,11 +13,7 @@ $(document).ready(function () {
     window.onload = function () {
 
         // Assigns each character's stats when page is first loaded
-        setCharacterStats(obiWanKenobi, "#obi-wan-kenobi", "Obi-Wan Kenobi");
-        setCharacterStats(lukeSkywalker, "#luke-skywalker", "Luke Skywalker");
-        setCharacterStats(darthSidious, "#darth-sidious", "Darth Sidious");
-        setCharacterStats(darthMaul, "#darth-maul", "Darth Maul");
-        // $(".reset").hide();
+        setAllCharacterStats();
     }
 
     function setCharacterStats(character, cardID, name) {
@@ -35,31 +31,39 @@ $(document).ready(function () {
         $(cardID).find(".health-points").text(character.healthPoints);
     }
 
+    function setAllCharacterStats() {
+        setCharacterStats(obiWanKenobi, "#obi-wan-kenobi", "Obi-Wan Kenobi");
+        setCharacterStats(lukeSkywalker, "#luke-skywalker", "Luke Skywalker");
+        setCharacterStats(darthSidious, "#darth-sidious", "Darth Sidious");
+        setCharacterStats(darthMaul, "#darth-maul", "Darth Maul");
+    }
+
     // Selects fighter and defender
     $(".character").on("click", function () {
         // If fighter hasn't been chosen, choose as fighter
         if (!fighter) {
             fighter = this;
 
+            // Moves all characters aside from the fighter to the Enemies to Attack section
             $(".character").each(function (i) {
                 if (this !== fighter) {
-                    $("#enemies-to-attack").append(this);
-                    $(".character").detach(this);
+                    $(this).appendTo("#enemies-to-attack")
                 }
             })
+
         } else if (!defender) { // If defender hasn't been chosen, choose as defender
             defender = this;
-            $("#defender").append(defender);
-            $(".character").remove(this);
+            $(this).appendTo("#defender");
         }
     })
 
     // Fighter attacks, and defender counterattacks if valid
     $(".attack").on("click", function () {
+
         // If fighter and defender have already been chosen
         if (fighter && defender) {
             numOfAttacks++;
-            console.log("attack!!");
+
             // Fighter attacks defender
             $(defender).data().healthPoints -= $(fighter).data().attack * numOfAttacks;
 
@@ -75,17 +79,28 @@ $(document).ready(function () {
             } else { // If defender has no HP, user has lost
                 $(fighter).find(".health-points").text(0);
                 statusUpdate += "<p>You have lost!!</p>";
+                $(".attack").hide();
                 $(".reset").show();
+                $(".status").html(statusUpdate);
+                return;
             }
+            
+            statusUpdate = "<p>You have attacked " + $(defender).data().name + " for " + ($(fighter).data().attack * numOfAttacks) + " damage.</p>" + statusUpdate;
 
             // If defender still has HP, update on screen
             if ($(defender).data().healthPoints > 0) {
                 $(defender).find(".health-points").text($(defender).data().healthPoints);
-                statusUpdate = "<p>You have attacked " + $(defender).data().name + " for " + ($(fighter).data().attack * numOfAttacks) + " damage.</p>" + statusUpdate;
             } else { // If defender doesn't have HP, clear out defender, display message
                 statusUpdate += "<p>Defender has been defeated!</p>";
                 $(defender).hide();
                 defender = null;
+                
+                // If there are no more enemies to attack, user wins
+                if ($("#enemies-to-attack").find(".character").length === 0){
+                    statusUpdate += "<p>You've won!</p>";
+                    $(".attack").hide();
+                    $(".reset").show();
+                }
             }
 
             $(".status").html(statusUpdate);
@@ -93,17 +108,20 @@ $(document).ready(function () {
     })
 
     // Resets game, hides button afterwards
-    $(".reset").on("click", function(){
-        resetGame();
-        $(".reset").hide();
-    })
-
-    function resetGame(){
+    $(".reset").on("click", function () {
         numOfAttacks = 0;
-        setCharacterStats(obiWanKenobi, "#obi-wan-kenobi", "Obi-Wan Kenobi");
-        setCharacterStats(lukeSkywalker, "#luke-skywalker", "Luke Skywalker");
-        setCharacterStats(darthSidious, "#darth-sidious", "Darth Sidious");
-        setCharacterStats(darthMaul, "#darth-maul", "Darth Maul");
-    }
+        setAllCharacterStats();
+        defender = null;
+        fighter = null;
 
+        // Resets location of characters
+        $("#defender").children().show();
+        $("#defender").find(".character").appendTo("#your-character");
+        $("#defender").children().appendTo(".your-character");
+        $("#enemies-to-attack").find(".character").appendTo("#your-character");
+
+        $(".status").html("");
+        $(".reset").hide();
+        $(".attack").show();
+    })
 })

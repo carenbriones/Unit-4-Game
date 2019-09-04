@@ -1,0 +1,44 @@
+<!--
+    @author Caren Briones <carenpbriones@gmail.com>
+    Crystal Collector Game
+
+    September 1, 2019
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>    
+
+    <title>Crystal Collector Game</title>
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div id = "rules">RULES:
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal, you will add the random (hidden) value assigned to it to your current total.</p>
+        <p>You win the game by matching your total score to the random number.  You lose the game if your total score exceeds the random number</p>
+        <p>Each time the game starts, the random target value and random values assigned to each crystal will be changed.</p>
+    </div>
+    <div id = "random-number"></div><br>
+    <button class = "crystal" id = "crystal-1">Crystal 1</button>
+    <button class = "crystal" id = "crystal-2">Crystal 2</button>
+    <button class = "crystal" id = "crystal-3">Crystal 3</button>
+    <button class = "crystal" id = "crystal-4">Crystal 4</button><br><br>
+    <div id = "current-total"></div> <br>  
+    <div id = "wins">Wins: </div>
+    <div id = "losses"></div>
+</body>
+
+</html>

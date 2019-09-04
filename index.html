@@ -1,8 +1,8 @@
 <!--
     @author Caren Briones <carenpbriones@gmail.com>
-    Crystal Collector Game
+    Star Wars RPG Game
 
-    September 1, 2019
+    September 2, 2019
 -->
 
 <!DOCTYPE html>
@@ -13,32 +13,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>    
-
-    <title>Crystal Collector Game</title>
-    <script src="assets/javascript/game.js"></script>
+    <title>Star Wars RPG Game</title>
+    <script src="assets/javascript/game2.js"></script>
 </head>
 
 <body>
-    <div id = "rules">RULES:
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystals below. By clicking on a crystal, you will add the random (hidden) value assigned to it to your current total.</p>
-        <p>You win the game by matching your total score to the random number.  You lose the game if your total score exceeds the random number</p>
-        <p>Each time the game starts, the random target value and random values assigned to each crystal will be changed.</p>
-    </div>
-    <div id = "random-number"></div><br>
-    <button class = "crystal" id = "crystal-1">Crystal 1</button>
-    <button class = "crystal" id = "crystal-2">Crystal 2</button>
-    <button class = "crystal" id = "crystal-3">Crystal 3</button>
-    <button class = "crystal" id = "crystal-4">Crystal 4</button><br><br>
-    <div id = "current-total"></div> <br>  
-    <div id = "wins">Wins: </div>
-    <div id = "losses"></div>
+    <div class="container mx-auto">
+        <div class="row" id="your-character">
+            <h1 class="col-12">Star Wars RPG Game</h1>
+            <h2 class="col-12">Your Character</h2>
+            <div class="col-lg-3 col-sm-6 character" id="obi-wan-kenobi">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/obi-wan-kenobi.jpeg" alt="Obi Wan Kenobi">
+                    <div class="card-body">
+                        <h5 class="card-title">Obi-Wan Kenobi</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 character" id="luke-skywalker">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/luke-skywalker.jpg" alt="Luke Skywalker">
+                    <div class="card-body">
+                        <h5 class="card-title">Luke Skywalker</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 character" id="darth-sidious">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/darth-sidious.jpeg" alt="Darth Sidious">
+                    <div class="card-body">
+                        <h5 class="card-title">Darth Sidious</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 character" id="darth-maul">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/darth-maul.jpg" alt="Darth Maul">
+                    <div class="card-body">
+                        <h5 class="card-title">Darth Maul</h5>
+                        <p class="card-text health-points"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="enemies-to-attack">
+            <h2 class="col-12">Enemies To Attack</h2>
+        </div>
+        <div class="row" id="defender">
+            <h2 class="col-12">Defender</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-primary attack">Attack</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 status">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="button" class="btn btn-primary reset" style="display: none;">Reset</button>
+            </div>
+        </div>
+    </div><br><br>
 </body>
 
 </html>

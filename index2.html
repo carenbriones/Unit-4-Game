@@ -27,9 +27,10 @@
 <body>
     <div class="container mx-auto">
         <div class="row" id="your-character">
+            <h1 class="col-12">Star Wars RPG Game</h1>
             <h2 class="col-12">Your Character</h2>
-            <div class="col-3 character">
-                <div class="card" id="obi-wan-kenobi">
+            <div class="col-2 character" id="obi-wan-kenobi">
+                <div class="card">
                     <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
                     <div class="card-body">
                         <h5 class="card-title">Obi-Wan Kenobi</h5>
@@ -37,8 +38,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 character">
-                <div class="card" id="luke-skywalker">
+            <div class="col-2 character" id="luke-skywalker">
+                <div class="card">
                     <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
                     <div class="card-body">
                         <h5 class="card-title">Luke Skywalker</h5>
@@ -46,36 +47,47 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 character">
-                <div class="card" id="darth-sidious">
+            <div class="col-2 character" id="darth-sidious">
+                <div class="card">
                     <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
                     <div class="card-body">
-                        <h5 class="card-title health-points">Darth Sidious</h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title">Darth Sidious</h5>
+                        <p class="card-text health-points"></p>
                     </div>
                 </div>
             </div>
-            <div class="col-3 character">
-                <div class="card" id="darth-maul">
+            <div class="col-2 character" id="darth-maul">
+                <div class="card">
                     <img class="card-img-top" src="https://via.placeholder.com/100" alt="100 x 100 placeholder">
                     <div class="card-body">
-                        <h5 class="card-title health-points">Darth Maul</h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title">Darth Maul</h5>
+                        <p class="card-text health-points"></p>
                     </div>
                 </div>
             </div>
-        </div> <br> <br>
+        </div> 
         <div class="row" id="enemies-to-attack">
             <h2 class="col-12">Enemies To Attack</h2>
-        </div> <br> <br>
+        </div>
         <div class="row" id="defender">
             <h2 class="col-12">Defender</h2>
-        </div><br> <br>
+        </div>
         <div class="row">
             <div class="col-3">
-                <button type="button" class="btn btn-primary" class="attack">Attack</button>
+                <button type="button" class="btn btn-primary attack">Attack</button>
             </div>
         </div>
+        <div class="row">
+            <div class="col-3 status">
+
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-3">
+                    <button type="button" class="btn btn-primary reset" style="display: none;">Reset</button>
+                </div>
+            </div>
+
     </div><br><br>
     <!-- <button type="button" class="character btn btn-primary" id="obi-wan-kenobi">Obi-Wan Kenobi</button>
         <button type="button" class="character btn btn-primary" id="luke-skywalker">Luke Skywalker</button>
